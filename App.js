@@ -4,9 +4,18 @@ import { createAppContainer } from "react-navigation";
 import { createMaterialBottomTabNavigator } from
 	"react-navigation-material-bottom-tabs";
 
+//TODO: have index for screens? 
 import HomeScreen from "./screens/testingDelete/HomeScreen";
 import UserScreen from "./screens/testingDelete/UserScreen";
 import SettingScreen from "./screens/testingDelete/SettingScreen";
+
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
+
+import awsmobile from "./src/aws-exports"; 
+import awsconfig from './src/aws-exports'; // if you are using Amplify CLI
+
+Amplify.configure(awsmobile);
 
 
 //for reference: https://reactnavigation.org/docs/tab-based-navigation
@@ -61,10 +70,13 @@ const TabNavigator = createMaterialBottomTabNavigator(
 
 const Navigator = createAppContainer(TabNavigator);
 
-export default function App() {
+function App() {
 return (
 	<Navigator>
 	<HomeScreen />
 	</Navigator>
 );
 }
+
+
+export default withAuthenticator(App); 
