@@ -4,9 +4,9 @@ import { createAppContainer } from "react-navigation";
 import { createMaterialBottomTabNavigator } from
 	"react-navigation-material-bottom-tabs";
 
-import HomeScreen from "./screens/HomeScreen";
-import UserScreen from "./screens/UserScreen";
-import SettingScreen from "./screens/SettingScreen";
+import HomeScreen from "./screens/testingDelete/HomeScreen";
+import UserScreen from "./screens/testingDelete/UserScreen";
+import SettingScreen from "./screens/testingDelete/SettingScreen";
 
 
 //for reference: https://reactnavigation.org/docs/tab-based-navigation
